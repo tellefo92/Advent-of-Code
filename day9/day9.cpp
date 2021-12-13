@@ -8,7 +8,7 @@
 int Above(int i) {
     // Returns index of element above i in FlattenedMap
     // If i is on top row, return -1
-    return i - 100 >= 0 ? i - 100 : 10;
+    return i - 100 >= 0 ? i - 100 : -1;
 }
 
 int Below(int i) {
