@@ -21,14 +21,14 @@ int Right(int i, vector<int>& cave) {
 
 void findAllPaths(vector<int>& cave, int i, int risk, int &lowest_risk, map<int,int>& visited) {
     risk += cave[i];
+    if (risk >= lowest_risk) {
+        return;
+    }
     map<int,int>::iterator it = visited.find(i);
     if (it != visited.end()) {
         if (risk >= visited[i]) {
             return;
         }
-    }
-    if (risk >= lowest_risk) {
-        return;
     }
     visited[i] = risk;
     if (Below(i, cave) == -1 && Right(i, cave) == -1) {
